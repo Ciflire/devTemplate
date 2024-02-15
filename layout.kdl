@@ -30,6 +30,12 @@ layout {
 	// 		args "main.pdf"
 	// 	}
 	// }
+
+	// tab name="run" {
+	// 	pane cwd="./" command="cargo" {
+	// 		args "run"
+	// 	}
+	// }
 	
 	tab name="editor" {
 		pane cwd="./" command="hx" {
