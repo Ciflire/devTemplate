@@ -11,15 +11,12 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      devShells.${system}.default = pkgs.mkShell {
+      devShells.${system}.default = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
         packages = with pkgs; [
-          cargo
-          rustc
-          rust-analyzer
-          rustfmt
+          rocmPackages.llvm.clang-tools-extra
+          cmake
         ];
         shellHook = "";
       };
-
     };
 }
